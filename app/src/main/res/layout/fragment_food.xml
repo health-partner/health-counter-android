@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentFood">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="식단 일지"
+        android:textColor="@color/personal_info_text_color"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/guide_line_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!-- 아침 식사 카드 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/breakfastCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+                            android:id="@+id/breakfastImageView"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/breakfast"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/breakfastTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="아침 식사"
+                            android:textColor="@color/login_text_color"
+                            android:textSize="22dp"
+                            app:layout_constraintBottom_toBottomOf="@id/breakfastImageView"
+                            app:layout_constraintStart_toEndOf="@id/breakfastImageView"
+                            app:layout_constraintTop_toTopOf="@id/breakfastImageView" />
+
+                        <ImageButton
+                            android:id="@+id/breakfastAddButton"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@color/white"
+                            android:src="@drawable/baseline_add_blue24"
+                            app:layout_constraintBottom_toBottomOf="@id/breakfastTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/breakfastTextView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/breakfastDetailCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="-12dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/breakfastCardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/downArrowButton1"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/baseline_keyboard_arrow_down_24"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/leftArrowButton1"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/baseline_keyboard_arrow_left_24"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/breakfastCalorieTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/leftArrowButton1"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="-5dp"
+                            android:text="아직"
+                            android:textSize="18dp"
+                            android:visibility="gone"
+                            android:textColor="@color/login_text_color"
+                            />
+
+                        <TextView
+                            android:id="@+id/breakfastMenuTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="@id/breakfastCalorieTextView"
+                            app:layout_constraintTop_toBottomOf="@id/breakfastCalorieTextView"
+                            android:layout_marginTop="10dp"
+                            android:text="아직"
+                            android:textSize="15dp"
+                            android:textColor="@color/login_text_color"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- 점심 식사 카드 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/lunchCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/breakfastDetailCardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+                            android:id="@+id/lunchImageView"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/lunch"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/lunchTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="점심 식사"
+                            android:textColor="@color/login_text_color"
+                            android:textSize="22dp"
+                            app:layout_constraintBottom_toBottomOf="@id/lunchImageView"
+                            app:layout_constraintStart_toEndOf="@id/lunchImageView"
+                            app:layout_constraintTop_toTopOf="@id/lunchImageView" />
+
+                        <ImageButton
+                            android:id="@+id/lunchAddButton"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@color/white"
+                            android:src="@drawable/baseline_add_blue24"
+                            app:layout_constraintBottom_toBottomOf="@id/lunchTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/lunchTextView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/lunchDetailCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="-12dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lunchCardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/downArrowButton2"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/baseline_keyboard_arrow_down_24"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/leftArrowButton2"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/baseline_keyboard_arrow_left_24"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/lunchCalorieTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/leftArrowButton2"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="-5dp"
+                            android:text="아직"
+                            android:textSize="18dp"
+                            android:visibility="gone"
+                            android:textColor="@color/login_text_color"
+                            />
+
+                        <TextView
+                            android:id="@+id/lunchMenuTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="@id/lunchCalorieTextView"
+                            app:layout_constraintTop_toBottomOf="@id/lunchCalorieTextView"
+                            android:layout_marginTop="10dp"
+                            android:text="아직"
+                            android:textSize="15dp"
+                            android:textColor="@color/login_text_color"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- 저녁 식사 카드 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/dinnerCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lunchDetailCardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+                            android:id="@+id/dinnerImageView"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/dinner"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/dinnerTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="저녁 식사"
+                            android:textColor="@color/login_text_color"
+                            android:textSize="22dp"
+                            app:layout_constraintBottom_toBottomOf="@id/dinnerImageView"
+                            app:layout_constraintStart_toEndOf="@id/dinnerImageView"
+                            app:layout_constraintTop_toTopOf="@id/dinnerImageView" />
+
+                        <ImageButton
+                            android:id="@+id/dinnerAddButton"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@color/white"
+                            android:src="@drawable/baseline_add_blue24"
+                            app:layout_constraintBottom_toBottomOf="@id/dinnerTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/dinnerTextView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/dinnerDetailCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="-12dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dinnerCardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/downArrowButton3"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/baseline_keyboard_arrow_down_24"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/leftArrowButton3"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/baseline_keyboard_arrow_left_24"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/dinnerCalorieTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/leftArrowButton3"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="-5dp"
+                            android:text="아직"
+                            android:textSize="18dp"
+                            android:visibility="gone"
+                            android:textColor="@color/login_text_color"
+                            />
+
+                        <TextView
+                            android:id="@+id/dinnerMenuTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="@id/dinnerCalorieTextView"
+                            app:layout_constraintTop_toBottomOf="@id/dinnerCalorieTextView"
+                            android:layout_marginTop="10dp"
+                            android:text="아직"
+                            android:textSize="15dp"
+                            android:textColor="@color/login_text_color"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/summaryCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="30dp"
+                    app:cardBackgroundColor="@color/cardBackground"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dinnerDetailCardView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/recommended"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:text="일일 권장 칼로리"
+                            android:textColor="@color/login_text_color"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/recommendedTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:text="1000 kcal"
+                            android:textSize="18dp"
+                            app:layout_constraintBottom_toBottomOf="@id/recommended"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/recommended" />
+
+                        <TextView
+                            android:id="@+id/consumed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="섭취한 칼로리"
+                            android:textColor="@color/login_text_color"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="@id/recommended"
+                            app:layout_constraintTop_toBottomOf="@id/recommended" />
+
+                        <TextView
+                            android:id="@+id/consumedTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:text="500 kcal"
+                            android:textSize="18dp"
+                            app:layout_constraintBottom_toBottomOf="@id/consumed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/consumed" />
+
+                        <TextView
+                            android:id="@+id/exercise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="운동으로 소모한 칼로리"
+                            android:textColor="@color/login_text_color"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="@id/consumed"
+                            app:layout_constraintTop_toBottomOf="@id/consumed" />
+
+                        <TextView
+                            android:id="@+id/exerciseTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:text="100 kcal"
+                            android:textSize="18dp"
+                            app:layout_constraintBottom_toBottomOf="@id/exercise"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/exercise" />
+
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@color/guide_line_color"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/exercise" />
+
+                        <TextView
+                            android:id="@+id/remain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="남은 칼로리"
+                            android:textColor="@color/login_text_color"
+                            android:textSize="18dp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/recommended"
+                            app:layout_constraintTop_toBottomOf="@id/view2" />
+
+                        <TextView
+                            android:id="@+id/remainTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:text="400 kcal"
+                            android:textSize="18dp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintBottom_toBottomOf="@id/remain"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/remain" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

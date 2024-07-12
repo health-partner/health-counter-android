@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">HealthCounterNew</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="activity_choices">
+        <item>평소 활동량을 기반으로 선택해주세요...</item>
+        <item>가벼운 활동 (자주 앉아있음, 일반사무 관리)</item>
+        <item>중증도 활동 (자주 서 있음, 서비스업, 판매)</item>
+        <item>강한 활동 (많은 활동량, 육체적 노동)</item>
+        <item>아주 강한 활동 (운동 선수와 같이 근육을 사용하는 일)</item>
+    </string-array>
+
+    <string-array name="exercise_selected_none">
+        <item>운동 부위를 먼저 선택해주세요...</item>
+    </string-array>
+
+    <string-array name="exercise_selected_chest">
+        <item>확인할 가슴 운동을 선택해주세요...</item>
+        <item>바벨 플랫 벤치 프레스</item>
+        <item>바벨 인클라인 벤치 프레스</item>
+        <item>스미스 벤치 프레스</item>
+        <item>팩 덱 플라이</item>
+    </string-array>
+
+    <string-array name="exercise_selected_shoulder">
+        <item>확인할 어깨 운동을 선택해주세요...</item>
+        <item>바벨 숄더 프레스</item>
+        <item>머신 숄더 프레스</item>
+        <item>머신 레터럴 레이즈</item>
+        <item>케이블 페이스 풀</item>
+    </string-array>
+
+    <string-array name="exercise_selected_leg">
+        <item>확인할 하체 운동을 선택해주세요...</item>
+        <item>바벨 스쿼트</item>
+        <item>스미스 스쿼트</item>
+        <item>머신 레그 프레스</item>
+        <item>레그 익스텐션</item>
+    </string-array>
+
+
+    <string-array name="exercise_selected_back">
+        <item>확인할 등 운동을 선택해주세요...</item>
+        <item>랫 풀 다운</item>
+        <item>케이블 시티드 로우</item>
+        <item>스미스 바벨 로우</item>
+        <item>바벨 로우</item>
+    </string-array>
+
+    <string name="title_activity_login2">LoginActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+</resources>

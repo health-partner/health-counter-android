@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendarDetailActivity">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="세부 기록"
+        android:textColor="@color/personal_info_text_color"
+        android:textSize="25dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/guide_line_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <ImageView
+        android:id="@+id/goToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/baseline_back_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleTextView" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택된 일자"
+        app:layout_constraintBottom_toBottomOf="@+id/goToHome"
+        app:layout_constraintStart_toEndOf="@+id/goToHome"
+        app:layout_constraintTop_toTopOf="@+id/goToHome" />
+
+    <ImageView
+        android:id="@+id/rightArrowButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_keyboard_arrow_right_24"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <ImageView
+        android:id="@+id/downArrowButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_keyboard_arrow_down_24"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/exerciseLogTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="운동 일지"
+        android:textColor="@color/login_text_color"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rightArrowButton"
+        app:layout_constraintStart_toEndOf="@+id/rightArrowButton"
+        app:layout_constraintTop_toTopOf="@+id/rightArrowButton" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/dropDownLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="rightArrowButton,downArrowButton, exerciseLogTextView"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/exerciseActivityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="25dp"
+        android:textSize="20dp"
+        android:text="스미스 벤치 프레스\n바벨 디클라인 벤치 프레스"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseLogTextView" />
+
+    <TextView
+        android:id="@+id/exerciseTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="50dp"
+        android:text="- 운동 시간: 1시간"
+        android:textColor="@color/login_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseActivityTextView" />
+
+    <TextView
+        android:id="@+id/burnedCaloriesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="- 소모 열량: 441kcal"
+        android:textColor="@color/login_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/exerciseTimeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseTimeTextView" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/exerciseLogLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="exerciseActivityTextView,exerciseTimeTextView, burnedCaloriesTextView"
+        tools:ignore="MissingConstraints"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/rightArrowButton2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/baseline_keyboard_arrow_right_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/burnedCaloriesTextView" />
+
+    <ImageView
+        android:id="@+id/downArrowButton2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/baseline_keyboard_arrow_down_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/burnedCaloriesTextView"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/foodLogTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="식단 일지"
+        android:textColor="@color/login_text_color"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rightArrowButton2"
+        app:layout_constraintStart_toEndOf="@+id/rightArrowButton2"
+        app:layout_constraintTop_toTopOf="@+id/rightArrowButton2" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/dropDownLayer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="rightArrowButton2, downArrowButton2, foodLogTextView"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/consumedFoodTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="25dp"
+        android:text="- 점심: 850kcal\n- 저녁: 1100kcal"
+        android:textColor="@color/login_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodLogTextView" />
+
+    <TextView
+        android:id="@+id/consumedCaloriesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="총 섭취 열량: 1950kcal"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/login_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/consumedFoodTextView"
+        app:layout_constraintTop_toBottomOf="@+id/consumedFoodTextView" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/foodLogLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="consumedFoodTextView, consumedCaloriesTextView"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

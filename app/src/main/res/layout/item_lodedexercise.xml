@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/loadedExercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+        android:layout_marginTop="35dp"
+        android:text="로드한 운동명"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/justDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_circle_24"
+        app:layout_constraintTop_toTopOf="@id/loadedExercise"
+        app:layout_constraintBottom_toBottomOf="@id/loadedExercise"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentReport">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="리포트"
+        android:textColor="@color/personal_info_text_color"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/guide_line_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/exerciseVolumeTextView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="운동 볼륨 그래프"
+                        android:textColor="@color/login_text_color"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/exerciseRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/exerciseVolumeTextView"
+                    android:layout_marginStart="30dp"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/chestRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가슴" />
+
+                    <RadioButton
+                        android:id="@+id/shoulderRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="어깨" />
+
+                    <RadioButton
+                        android:id="@+id/legRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="하체" />
+
+                    <RadioButton
+                        android:id="@+id/backRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="등" />
+                </RadioGroup>
+
+                <Spinner
+                    android:id="@+id/exerciseSelectedSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/exerciseRadioGroup"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="30dp"
+                    />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/exercise_volume_chart"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/exerciseSelectedSpinner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="379dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/guide_line_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/exercise_volume_chart" />
+
+                <TextView
+                    android:id="@+id/calorieTextView"
+                    app:layout_constraintTop_toBottomOf="@id/view2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="식단 그래프"
+                    android:textColor="@color/login_text_color"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/calorie_chart"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/calorieTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="379dp"
+                    android:layout_weight="1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

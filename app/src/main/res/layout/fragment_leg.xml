@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentLeg">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!-- 하체 첫 번째 운동 -->
+            <ImageView
+                android:id="@+id/ex01ImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ex301"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/ex01Line"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="3dp"
+                android:background="#A1A1A1"
+                app:layout_constraintBottom_toBottomOf="@id/ex01ImageView"
+                app:layout_constraintStart_toEndOf="@id/ex01ImageView"
+                app:layout_constraintTop_toTopOf="@id/ex01ImageView" />
+
+            <TextView
+                android:id="@+id/ex01TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="바벨 스쿼트"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ex01Line"
+                app:layout_constraintStart_toEndOf="@id/ex01Line"
+                app:layout_constraintTop_toTopOf="@id/ex01Line" />
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ex01TextView"
+                app:layout_constraintBottom_toBottomOf="@id/ex01TextView"
+                />
+
+
+            <androidx.constraintlayout.helper.widget.Layer
+                android:id="@+id/ex01Layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ex01ImageView,ex01Line, ex01TextView, radioButton1"
+                tools:ignore="MissingConstraints" />
+
+            <!-- 하체 두 번째 운동 -->
+            <ImageView
+                android:id="@+id/ex02ImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ex302"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ex01ImageView" />
+
+            <View
+                android:id="@+id/ex02Line"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="3dp"
+                android:background="#A1A1A1"
+                app:layout_constraintBottom_toBottomOf="@id/ex02ImageView"
+                app:layout_constraintStart_toEndOf="@id/ex02ImageView"
+                app:layout_constraintTop_toTopOf="@id/ex02ImageView" />
+
+            <TextView
+                android:id="@+id/ex02TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="스미스 스쿼트"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ex02Line"
+                app:layout_constraintStart_toEndOf="@id/ex02Line"
+                app:layout_constraintTop_toTopOf="@id/ex02Line" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ex02TextView"
+                app:layout_constraintBottom_toBottomOf="@id/ex02TextView"
+                />
+
+            <androidx.constraintlayout.helper.widget.Layer
+                android:id="@+id/ex02Layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ex02ImageView,ex02Line, ex02TextView, radioButton2"
+                tools:ignore="MissingConstraints" />
+
+            <!-- 하체 세 번째 운동 -->
+            <ImageView
+                android:id="@+id/ex03ImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ex303"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ex02ImageView" />
+
+            <View
+                android:id="@+id/ex03Line"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="3dp"
+                android:background="#A1A1A1"
+                app:layout_constraintBottom_toBottomOf="@id/ex03ImageView"
+                app:layout_constraintStart_toEndOf="@id/ex03ImageView"
+                app:layout_constraintTop_toTopOf="@id/ex03ImageView" />
+
+            <TextView
+                android:id="@+id/ex03TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="머신 레그 프레스"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ex03Line"
+                app:layout_constraintStart_toEndOf="@id/ex03Line"
+                app:layout_constraintTop_toTopOf="@id/ex03Line" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ex03TextView"
+                app:layout_constraintBottom_toBottomOf="@id/ex03TextView"
+                />
+
+            <androidx.constraintlayout.helper.widget.Layer
+                android:id="@+id/ex03Layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ex03ImageView,ex03Line, ex03TextView, radioButton3"
+                tools:ignore="MissingConstraints" />
+
+            <!-- 하체 네 번째 운동 -->
+            <ImageView
+                android:id="@+id/ex04ImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ex304"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ex03ImageView" />
+
+            <View
+                android:id="@+id/ex04Line"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="3dp"
+                android:background="#A1A1A1"
+                app:layout_constraintBottom_toBottomOf="@id/ex04ImageView"
+                app:layout_constraintStart_toEndOf="@id/ex04ImageView"
+                app:layout_constraintTop_toTopOf="@id/ex04ImageView" />
+
+            <TextView
+                android:id="@+id/ex04TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="레그 익스텐션"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ex04Line"
+                app:layout_constraintStart_toEndOf="@id/ex04Line"
+                app:layout_constraintTop_toTopOf="@id/ex04Line" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ex04TextView"
+                app:layout_constraintBottom_toBottomOf="@id/ex04TextView"
+                />
+
+            <androidx.constraintlayout.helper.widget.Layer
+                android:id="@+id/ex04Layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ex04ImageView,ex04Line, ex04TextView, radioButton4"
+                tools:ignore="MissingConstraints" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/exerciseAddButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+                android:backgroundTint="@color/personal_info_text_color"
+                android:clickable="true"
+                android:src="@drawable/baseline_add_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RadioGroup>
+
+</FrameLayout>

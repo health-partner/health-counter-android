@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalInfoActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/goToMainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:backgroundTint="@color/personal_info_text_color"
+        android:src="@drawable/baseline_directions_run_24"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/editButton"
+        app:layout_constraintEnd_toEndOf="@+id/editButton"
+        app:layout_constraintStart_toStartOf="@+id/editButton" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="@color/personal_info_text_color"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/sexTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="성별"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/personal_info_text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="45dp"
+        />
+
+    <TextView
+        android:id="@+id/weightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="체중"
+        android:textColor="@color/personal_info_text_color"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="45dp"
+        app:layout_constraintEnd_toEndOf="@+id/sexTextView"
+        app:layout_constraintStart_toStartOf="@+id/sexTextView"
+        app:layout_constraintTop_toBottomOf="@+id/sexTextView" />
+
+    <TextView
+        android:id="@+id/heightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="신장"
+        android:textColor="@color/personal_info_text_color"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="45dp"
+        app:layout_constraintEnd_toEndOf="@+id/weightTextView"
+        app:layout_constraintStart_toStartOf="@+id/weightTextView"
+        app:layout_constraintTop_toBottomOf="@+id/weightTextView" />
+
+    <TextView
+        android:id="@+id/goalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="운동 목표"
+        android:textColor="@color/personal_info_text_color"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/heightTextView"
+        app:layout_constraintTop_toBottomOf="@+id/heightTextView" />
+
+    <TextView
+        android:id="@+id/exerciseAmountTextView"
+        android:layout_width="155dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="100dp"
+        android:text="평소 운동량"
+        android:textColor="@color/personal_info_text_color"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/goalTextView"
+        app:layout_constraintTop_toBottomOf="@+id/goalTextView" />
+
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미등록"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/login_text_color"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sexTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sexTextView" />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미등록"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginEnd="80dp"
+        android:textColor="@color/login_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/weightTextView"
+        app:layout_constraintBottom_toBottomOf="@id/weightTextView"
+        />
+
+    <TextView
+        android:id="@+id/kilogram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kg"
+        android:textSize="22dp"
+        android:visibility="invisible"
+        android:textColor="@color/login_text_color"
+        android:textStyle="bold"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/weight"
+        app:layout_constraintStart_toEndOf="@+id/weight"
+        app:layout_constraintTop_toTopOf="@+id/weight" />
+
+    <TextView
+        android:id="@+id/height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미등록"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginEnd="80dp"
+        android:textColor="@color/login_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/heightTextView"
+        app:layout_constraintBottom_toBottomOf="@id/heightTextView"
+        />
+
+    <TextView
+        android:id="@+id/centimeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cm"
+        android:textSize="22dp"
+        android:textColor="@color/login_text_color"
+        android:visibility="invisible"
+        android:textStyle="bold"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/height"
+        app:layout_constraintStart_toEndOf="@+id/height"
+        app:layout_constraintTop_toTopOf="@+id/height" />
+
+    <TextView
+        android:id="@+id/goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미등록"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/login_text_color"
+        android:layout_marginTop ="25dp"
+        app:layout_constraintStart_toStartOf="@+id/goalTextView"
+        app:layout_constraintTop_toBottomOf="@+id/goalTextView" />
+
+    <TextView
+        android:id="@+id/goalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="을(를) 목표로 하고 있습니다. "
+        android:textColor="@color/login_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/goal"
+        app:layout_constraintStart_toEndOf="@+id/goal"
+        app:layout_constraintTop_toTopOf="@+id/goal" />
+
+    <TextView
+        android:id="@+id/exerciseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="미등록"
+        android:textColor="@color/login_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/exerciseAmountTextView"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseAmountTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
